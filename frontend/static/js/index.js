@@ -1,4 +1,8 @@
 import Dashboard from "./views/Dashboard.js";
+import Posts from "./views/Posts.js";
+import Settings from "./views/Settings.js";
+
+
 
 const navigateTo = url =>{
     history.pushState(null, null, url);
@@ -8,8 +12,8 @@ const navigateTo = url =>{
 const router = async() => {
     const routes = [
         { path: "/", view: Dashboard },
-        //{ path: "/posts", view: () => console.log("viewing posts")},
-        //{ path: "/settings", view: () => console.log("viewing settings")},
+        { path: "/posts", view: Posts },
+        { path: "/settings", view: Settings},
     ];
 
     // test each route for match
@@ -33,7 +37,6 @@ const router = async() => {
 
     document.querySelector("#app").innerHTML = await view.getHtml();
 
-    console.log(match.route.view());
 };
 
 window.addEventListener("popstate", router);
