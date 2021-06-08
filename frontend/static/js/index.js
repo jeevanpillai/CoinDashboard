@@ -1,7 +1,5 @@
 import Dashboard from "./views/Dashboard.js";
-import Posts from "./views/Posts.js";
-import PostView from "./views/PostView.js";
-import Settings from "./views/Settings.js";
+import Favs from "./views/Favourites.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -22,9 +20,7 @@ const navigateTo = url =>{
 const router = async() => {
     const routes = [
         { path: "/", view: Dashboard },
-        { path: "/posts", view: Posts },
-        { path: "/posts/:id", view: PostView },
-        { path: "/settings", view: Settings},
+        { path: "/favs", view: Favs},
     ];
 
     // test each route for match
@@ -46,8 +42,8 @@ const router = async() => {
 
     const view = new match.route.view(getParams(match));
 
-    document.querySelector("#app").innerHTML = await view.getHtml();
-
+    //document.querySelector("#app").innerHTML = await view.getHtml();
+    view.getHtml(20);
 };
 
 window.addEventListener("popstate", router);

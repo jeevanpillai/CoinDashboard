@@ -5,6 +5,44 @@ body {
     font-size: 18px;
 }
 
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 30%;
+    align-items: flex-start;
+    transition: 0.3s;
+    text-align:center;
+    border-radius: 5px; /* 5px rounded corners */
+    margin: 10px;
+}  
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+table, tr, td{
+    width: 80%;
+    margin: auto;
+    border: #222222;
+    border-style: none;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+h4{
+    text-align: left;
+}
+
+.att{
+    width: 50%;
+    text-align: left;
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 16px 16px;
+}
+
 .nav {
     position: fixed;
     top: 0;
@@ -30,8 +68,18 @@ body {
     margin: 2em;
     line-height: 1.5;
     font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#title{
+    margin: 2em;
+    line-height: 1.5;
+    font-weight: 500;
+    display: block;
 }
 
 a {
     color: #009579;
 }
+
