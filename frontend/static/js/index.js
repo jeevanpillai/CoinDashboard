@@ -1,5 +1,6 @@
 import Dashboard from "./views/Dashboard.js";
-import Favs from "./views/Favourites.js";
+import Favourites from "./views/Favourites.js";
+import search from "./search.js"
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -20,7 +21,7 @@ const navigateTo = url =>{
 const router = async() => {
     const routes = [
         { path: "/", view: Dashboard },
-        { path: "/favs", view: Favs},
+        { path: "/favs", view: Favourites},
     ];
 
     // test each route for match
@@ -46,6 +47,7 @@ const router = async() => {
     view.getHtml(20);
 };
 
+
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -55,6 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             navigateTo(e.target.href);
         }
     });
-
+    search.testf();
     router();
 });

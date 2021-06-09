@@ -1,5 +1,5 @@
 body {
-    --nav-width: 200px;
+    --nav-width: 250px;
     margin: 0 0 0 var(--nav-width);
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
@@ -30,7 +30,10 @@ table, tr, td{
 }
 
 h4{
+    margin-top: 5px;
     text-align: left;
+    float: left;
+    font-size: 24px;
 }
 
 .att{
@@ -58,6 +61,7 @@ h4{
     text-decoration: none;
     color: #eeeeee;
     font-weight: 500;
+    font-size: 20px;
 }
 
 .nav__link:hover {
@@ -81,5 +85,41 @@ h4{
 
 a {
     color: #009579;
+}
+
+.button {
+    border: none;
+    background-color: white; 
+    color: black; 
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px; /* 5px rounded corners */
+
+  }
+
+.button_pressed {
+    border: none;
+    background-color: #4CAF50; 
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px; /* 5px rounded corners */
+}
+  
+.button:hover {
+background-color: #4CAF50;
+color: white;
 }
 
