@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinGecko - Crypto Dashboard</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.6.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.6.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.6.5/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+  <body>
+      <nav class="nav">
+          <a class="nav__link"></a><br></a>
+          <a href="/" class="nav__link" data-link>Dashboard</a>
+          <a href="/favs" class="nav__link" data-link>Favourites</a>
+      </nav>
+      <div id="title"></div>
+      <div id="fiat"></div>
+      <div id="app"></div>
+      <div id="footer"></div>
+      <script type="module" src="js/index.js"></script>
+      <script type="module" src="js/search.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.js"></script>
+      <script src="/__/firebase/8.6.5/firebase-app.js"></script>
+      <script src="/__/firebase/init.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>
